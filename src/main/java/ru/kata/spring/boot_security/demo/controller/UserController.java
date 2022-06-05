@@ -72,5 +72,11 @@ public class UserController {
         return "admin";
     }
 
+//    @GetMapping(value = "/user")
+//    public String showUser(User user){
+//        model.addAttribute("user",  userService.find());
+//        return "user";
+//    }
+
 
 }
