@@ -6,11 +6,10 @@
 <body>
 <h1>User, welcome spring boot security page!</h1>
 
-
-<div th:switch="${users}">
+<div th:switch="${user}">
     <h2 th:case="null">No users found!</h2>
     <div th:case="*">
-        <h2>Users</h2>
+        <h2>User</h2>
         <table border="1">
             <thead>
             <tr>
@@ -22,7 +21,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="user : ${users}">
+            <tr th:switch="${user}">
                 <td th:utext="${user.id}">Id</td>
                 <td th:utext="${user.name}">Name</td>
                 <td th:utext="${user.last_name}">Last name</td>
@@ -33,7 +32,10 @@
             </tbody>
         </table>
     </div>
-<!--    <p><a href="/user_add">Add new user</a> </p>-->
+
+
+    <br/>
+    <p><a href="/logout">Logout</a> </p>
 </div>
 
 
