@@ -9,7 +9,7 @@
 
 <h2>Add user</h2>
 
-<form action="#" th:action="@{/user_add}" th:object="${user}" method="post">
+<form action="#" th:action="@{/admin/user_add}" th:object="${user}" method="post">
     <label for="name">Name</label>
     <input type="text" th:field="*{name}" id="name" placeholder="Name">
     <br/>
@@ -27,6 +27,14 @@
     <br/>
     <label for="name">Password</label>
     <input type="text" th:field="*{password}" id="password" placeholder="Password">
+    <br/>
+    <label>Roles:
+        <input type="checkbox" name="roles"
+               th:each="role : ${roles}"
+               th:text="${role.name}"
+               th:value="${role.id}"
+               th:field="*{roles}"/>
+    </label>
 
     <br/>
     <p><input type="submit" value="Add user"></p>

@@ -9,7 +9,7 @@
 
 <h2>Edit user</h2>
 
-<form action="#" th:action="@{/user_update}" th:object="${users}" method="post">
+<form action="#" th:action="@{/admin/user_update}" th:object="${users}" method="post">
     <label for="id">ID</label>
     <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
     <br/>
@@ -30,7 +30,14 @@
     <br/>
     <label for="name">Password</label>
     <input type="text" th:field="*{password}" id="password" placeholder="Password">
-
+    <br/>
+    <label>Roles:
+        <input type="checkbox" name="roles"
+               th:each="role : ${roles}"
+               th:text="${role.name}"
+               th:value="${role.id}"
+               th:field="*{roles}"/>
+    </label>
 
     <br/>
     <p><input type="submit" value="Edit user"></p>

@@ -21,6 +21,7 @@
                 <th>Email</th>
                 <th>Username</th>
                 <th>Password</th>
+                <th>Role</th>
             </tr>
             </thead>
             <tbody>
@@ -32,6 +33,10 @@
                 <td th:utext="${user.email}">Email</td>
                 <td th:utext="${user.username}">Username</td>
                 <td th:utext="${user.password}">Password</td>
+
+                <td>
+                    <li th:each="role: ${user.getRoles()}" th:text="${role.getName()}">Role</li>
+                </td>
 
                 <td><a th:href="@{user_update/{id}(id=${user.id})}">Edit user</a></td>
                 <td><a th:href="@{user_delete/{id}(id=${user.id})}">Delete user</a></td>

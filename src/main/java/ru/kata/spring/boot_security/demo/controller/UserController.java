@@ -7,8 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import ru.kata.spring.boot_security.demo.services.UserDetailsServiceImpl;
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Controller
 @RequestMapping(value = "/user")
